@@ -8,8 +8,12 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from time import sleep
 from bs4 import BeautifulSoup
+from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardButton, InlineKeyboardMarkup
 import json
 
+a1 = KeyboardButton(text='Посмотреть')
+kb_main = ReplyKeyboardMarkup(resize_keyboard=True)
+kb_main.add(a1)
 
 async def command_start(message: types.Message):
     '''Пиздец тут'''
@@ -153,7 +157,8 @@ async def command_start(message: types.Message):
                  f'🆔 Номер заказа: <strong>{orderNumber2}</strong>\n'
                  f'💬 Подробнее о заказе: <a href="{detailLink2}">Перейти</a>\n'
                  f'<a href="{imgUrl2}">&#8203;</a>',
-            parse_mode='HTML'
+            parse_mode='HTML',
+            reply_markup=kb_main
         )
 
         await bot.send_message(
@@ -229,4 +234,4 @@ async def command_start(message: types.Message):
         )
 
 def register_handlers_commands(dp: Dispatcher):
-    dp.register_message_handler(command_start, Text(equals=['/start', 'Помощь']))
+    dp.register_message_handler(command_start, Text(equals=['Посмотреть', '/start']))
