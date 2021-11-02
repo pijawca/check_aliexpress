@@ -1,10 +1,8 @@
 from aiogram.dispatcher.filters import Text
 from aiogram.dispatcher import Dispatcher
 from aiogram import types
-from aiogram.utils.markdown import hlink
 from misc import bot
 from config import USERID
-from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
@@ -176,16 +174,59 @@ async def command_start(message: types.Message):
             parse_mode='HTML'
         )
 
-        # await bot.send_message(
-        #     chat_id=message.from_user.id,
-        #     text=f'👓 Название заказа: \n{name6}\n'
-        #          f'🆔 Номер заказа: <strong>{orderNumber6}</strong>\n'
-        #          f'💬 Подробнее о заказе: <a href="{detailLink6}">Перейти</a>\n'
-        #          f'🚀 Где моя посылка: <a href="{logistic6}">Перейти</a>'
-        #          f'<a href="{imgUrl6}">&#8203;</a>',
-        #     parse_mode='HTML'
-        # )
+        await bot.send_message(
+            chat_id=message.from_user.id,
+            text=f'👓 Название заказа: \n{name5}\n'
+                 f'🆔 Номер заказа: <strong>{orderNumber5}</strong>\n'
+                 f'💬 Подробнее о заказе: <a href="{detailLink5}">Перейти</a>\n'
+                 f'<a href="{imgUrl5}">&#8203;</a>',
+            parse_mode='HTML'
+        )
 
+        await bot.send_message(
+            chat_id=message.from_user.id,
+            text=f'👓 Название заказа: \n{name6}\n'
+                 f'🆔 Номер заказа: <strong>{orderNumber6}</strong>\n'
+                 f'💬 Подробнее о заказе: <a href="{detailLink6}">Перейти</a>\n'
+                 f'<a href="{imgUrl6}">&#8203;</a>',
+            parse_mode='HTML'
+        )
+
+        await bot.send_message(
+            chat_id=message.from_user.id,
+            text=f'👓 Название заказа: \n{name7}\n'
+                 f'🆔 Номер заказа: <strong>{orderNumber7}</strong>\n'
+                 f'💬 Подробнее о заказе: <a href="{detailLink7}">Перейти</a>\n'
+                 f'<a href="{imgUrl7}">&#8203;</a>',
+            parse_mode='HTML'
+        )
+
+        await bot.send_message(
+            chat_id=message.from_user.id,
+            text=f'👓 Название заказа: \n{name8}\n'
+                 f'🆔 Номер заказа: <strong>{orderNumber8}</strong>\n'
+                 f'💬 Подробнее о заказе: <a href="{detailLink8}">Перейти</a>\n'
+                 f'<a href="{imgUrl8}">&#8203;</a>',
+            parse_mode='HTML'
+        )
+
+        await bot.send_message(
+            chat_id=message.from_user.id,
+            text=f'👓 Название заказа: \n{name9}\n'
+                 f'🆔 Номер заказа: <strong>{orderNumber9}</strong>\n'
+                 f'💬 Подробнее о заказе: <a href="{detailLink9}">Перейти</a>\n'
+                 f'<a href="{imgUrl9}">&#8203;</a>',
+            parse_mode='HTML'
+        )
+
+        await bot.send_message(
+            chat_id=message.from_user.id,
+            text=f'👓 Название заказа: \n{name10}\n'
+                 f'🆔 Номер заказа: <strong>{orderNumber10}</strong>\n'
+                 f'💬 Подробнее о заказе: <a href="{detailLink10}">Перейти</a>\n'
+                 f'<a href="{imgUrl10}">&#8203;</a>',
+            parse_mode='HTML'
+        )
 
 def register_handlers_commands(dp: Dispatcher):
     dp.register_message_handler(command_start, Text(equals=['/start', 'Помощь']))
